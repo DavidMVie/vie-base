@@ -113,8 +113,8 @@ div.off-edges {
 }
 
 /* Custom Style */
-ul.grid-service .grid-thumb-overlay.blogsThumb,
-ul.grid-service .grid-thumb-overlay.blogPostBanner {  
+ul.grid-service .grid-thumb-overlay.articlesThumb,
+ul.grid-service .grid-thumb-overlay.articlePostBanner {  
     padding: 20px 20px 2px 20px;
     color: black;
     background: radial-gradient( circle, rgba(255, 255, 255, 0.75) 30%, rgba(255, 255, 255, .85) 50%, rgba(255, 255, 255, 1) 75%);
@@ -123,12 +123,12 @@ ul.grid-service .grid-thumb-overlay.blogPostBanner {
     opacity: 1;
 }
 
-ul.grid-service .grid-thumb-overlay.blogsThumb:hover,
-ul.grid-service .grid-thumb-overlay.blogPostBanner:hover {
+ul.grid-service .grid-thumb-overlay.articlesThumb:hover,
+ul.grid-service .grid-thumb-overlay.articlePostBanner:hover {
   cursor: default;
 }
 
-ul.grid-service .grid-thumb-overlay .blogs-thumb-date {
+ul.grid-service .grid-thumb-overlay .articles-thumb-date {
   font-size: .65em;
   margin: 0;
   @media (min-width: 435px) {
@@ -204,7 +204,7 @@ ul.grid-service .grid-thumb-overlay hr {
   left: 25%;
 }
 
-ul.grid-service .grid-thumb-overlay ul.blogs-thumb-tags {
+ul.grid-service .grid-thumb-overlay ul.articles-thumb-tags {
   padding: 0;
   display: flex;
   align-items: center;
@@ -213,7 +213,7 @@ ul.grid-service .grid-thumb-overlay ul.blogs-thumb-tags {
 }
 
 
-ul.grid-service .grid-thumb-overlay ul.blogs-thumb-tags li {
+ul.grid-service .grid-thumb-overlay ul.articles-thumb-tags li {
   border: 1.5px solid rgb(141, 141, 141);
   border-radius: 7px;
   padding: 2px 4px;
@@ -228,15 +228,15 @@ ul.grid-service .grid-thumb-overlay ul.blogs-thumb-tags li {
   }
 }
 
-ul.grid-service .grid-thumb-overlay ul.blogs-thumb-tags li:active {
+ul.grid-service .grid-thumb-overlay ul.articles-thumb-tags li:active {
   box-shadow: inset 2px 0px 3px 0px rgba(0,0,0,.7);
 }
 
-ul.grid-service .grid-thumb-overlay ul.blogs-thumb-tags li i {
+ul.grid-service .grid-thumb-overlay ul.articles-thumb-tags li i {
   margin-right: 5px;
   color: rgb(75, 75, 75);
 }
 
-ul.grid-service .grid-thumb-overlay ul.blogs-thumb-tags li:hover i {
+ul.grid-service .grid-thumb-overlay ul.articles-thumb-tags li:hover i {
   color: #C80177;
 }

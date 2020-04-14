@@ -1,8 +1,8 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 
-import BlogPostBannerOverlay from'./custom/BlogPostBannerOverlay';
-import BlogsThumbOverlay from './custom/BlogsThumbOverlay';
+import ArticlesPostBannerOverlay from'./custom/ArticlesPostBannerOverlay';
+import ArticlesThumbOverlay from './custom/ArticlesThumbOverlay';
 import ProjectsOverlay from './custom/ProjectsOverlay';
 
 const GridImgOverlay = ({item, serviceType, staticOverlay, getArticlesByTag}) => {
@@ -26,10 +26,10 @@ const GridImgOverlay = ({item, serviceType, staticOverlay, getArticlesByTag}) =>
     switch (serviceType) {
       case 'projects': 
         return <ProjectsOverlay item={item}/>
-      case 'blogsThumb': 
-        return <BlogsThumbOverlay item={item} getArticlesByTag={getArticlesByTag}/>
-      case 'blogPostBanner':
-        return <BlogPostBannerOverlay item={item} />
+      case 'articlesThumb': 
+        return <ArticlesThumbOverlay item={item} getArticlesByTag={getArticlesByTag}/>
+      case 'articlePostBanner':
+        return <ArticlesPostBannerOverlay item={item} />
     }
   }
 

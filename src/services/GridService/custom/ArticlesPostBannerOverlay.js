@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-const BlogPostBannerOverlay = ({item}) => {
+const ArticlesPostBannerOverlay = ({item}) => {
 
   return (
     <>
@@ -13,4 +13,4 @@ const BlogPostBannerOverlay = ({item}) => {
   )
 }
 
-export default BlogPostBannerOverlay
+export default ArticlesPostBannerOverlay

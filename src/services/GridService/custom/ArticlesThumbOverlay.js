@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-const BlogsThumbOverlay = ({item, getArticlesByTag}) => {
+const ArticlesThumbOverlay = ({item, getArticlesByTag}) => {
 
   const getDate = (stamp) => {
     return moment(stamp).format('MMMM Do, YYYY');
@@ -16,7 +16,7 @@ const BlogsThumbOverlay = ({item, getArticlesByTag}) => {
  
   return (
     <>
-      <p className="blogs-thumb-date">Posted:{getDate(item.createdAt)}</p>
+      <p className="articles-thumb-date">Posted:{getDate(item.createdAt)}</p>
       <div className="thumb-center">
         <h1>{item.title} <hr /></h1>
         <div>
@@ -25,7 +25,7 @@ const BlogsThumbOverlay = ({item, getArticlesByTag}) => {
           </Link>
         </div>
       </div>              
-      <ul className="blogs-thumb-tags"> 
+      <ul className="articles-thumb-tags"> 
         {item.tags.map((tag) => {
           return <li key={tag} onClick={onClick}><i className="fas fa-tags"></i>{tag}</li>
         })}        
@@ -35,4 +35,4 @@ const BlogsThumbOverlay = ({item, getArticlesByTag}) => {
   )
 }
 
-export default BlogsThumbOverlay
+export default ArticlesThumbOverlay

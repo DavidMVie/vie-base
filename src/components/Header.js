@@ -22,7 +22,7 @@ const Header = () => {
           <SlideBox  show={show} toggleSlideBox={toggleSlideBox}>
             <nav className="mob-nav">
               <li><NavLink to="/" onClick={toggleSlideBox} activeClassName="is-active-link" exact={true}>Home</NavLink></li>
-              <li><NavLink to="/all-projects" onClick={toggleSlideBox} activeClassName="is-active-link">Projects</NavLink></li>
+              <li><NavLink to="/projects" onClick={toggleSlideBox} activeClassName="is-active-link">Projects</NavLink></li>
               <li><NavLink to="/articles" onClick={toggleSlideBox} activeClassName="is-active-link">Articles</NavLink></li>
               <li><NavLink to="/learning" onClick={toggleSlideBox} activeClassName="is-active-link">Learning</NavLink></li>
               <li><NavLink to="/contact" onClick={toggleSlideBox} activeClassName="is-active-link">Contact</NavLink></li>
@@ -32,7 +32,7 @@ const Header = () => {
         
         <nav className="noMob">
           <li><NavLink to="/" activeClassName="is-active-link" exact={true}>Home</NavLink></li>
-          <li><NavLink to="/all-projects" activeClassName="is-active-link">Projects</NavLink></li>
+          <li><NavLink to="/projects" activeClassName="is-active-link">Projects</NavLink></li>
           <li><NavLink to="/articles" activeClassName="is-active-link">Articles</NavLink></li>
           <li><NavLink to="/learning"  activeClassName="is-active-link">Learning</NavLink></li>
           <li><NavLink to="/contact"  activeClassName="is-active-link">Contact</NavLink></li>
