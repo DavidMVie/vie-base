@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const LoadingPage = () => {
 
-  const [ text ] = useState(['Loading Flux Capacitor!', 'Generating Important Thingmybobs!', 'Incoming things from the interweb!', 'Hold on, right there!', 'We\'re on it!', 'Warming up Rockets', 'Sniffing data packets!', 'Hey good lookin!', 'Earnestly Discombulating!', 'Not all who wander are lost!'])
+  const [ text ] = useState(['Loading Flux Capacitor!', 'Generating critical Thingmybobs!', 'Incoming things from the interweb!', 'Hold on, right there!', 'We\'re on it!', 'Warming up Rockets', 'Sniffing data packets!', '', 'Earnestly Discombulating!', 'Not all who wander are lost!', 'Recovering Satellites!'])
   
   const [ selectedText, setSelectedText ] = useState(text[Math.floor(Math.random() * text.length)])
 
