@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 
+// Whoops pretty sure this shouldn't have been committed to github!!
 const firebaseConfig = {
   apiKey: "AIzaSyDHDdqehB0jIkInX2OpQWrO64a7S46TBdk",
   authDomain: "dmvie-722fd.firebaseapp.com",

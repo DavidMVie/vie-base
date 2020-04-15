@@ -10,6 +10,7 @@ import Header from '../components/Header';
 import HeaderBar from '../components/HeaderBar';
 import HomePage from '../components/HomePage';
 import LearningPage from '../components/LearningPage';
+import LearningsPage from '../components/LearningsPage';
 import PageContent from '../components/PageContent';
 import PageNotFound from '../components/PageNotFound';
 import ProjectPage from '../components/ProjectPage';
@@ -26,12 +27,13 @@ const AppRouter = () => {
       <HeaderBar />
       <PageContent>
         <Switch>
-          <Route path="/" component={HomePage} exact={true} />
-          <Route path="/projects/:id" component={ProjectPage} />
+          <Route path="/" component={HomePage} exact={true}/>
+          <Route path="/projects/:id" component={ProjectPage}/>
           <Route path="/projects" component={ProjectsPage}/>
           <Route path="/articles/:id" component={ArticlePage}/>
           <Route path="/articles" component={ArticlesPage} />
-          <Route path="/learning" component={LearningPage} />
+          <Route path="/learnings/:id" component={LearningPage}/>
+          <Route path="/learnings" component={LearningsPage} />
           <Route path="/contact" component={ContactPage}/> 
           <Route component={PageNotFound} />
         </Switch>

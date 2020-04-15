@@ -5,16 +5,21 @@ import AppRouter from '../routers/AppRouter';
 import ArticlesContext from '../context/ArticlesContext';
 import articlesReducer from '../reducers/articles';
 import LoadingPage from '../components/LoadingPage';
+import LearningsContext from '../context/LearningsContext';
+import learningsReducer from '../reducers/learnings';
 import projectsReducer from '../reducers/projects';
 import ProjectsContext from '../context/ProjectsContext';
 
 import { setProjects } from '../actions/projects';
 import { setArticles } from '../actions/articles';
+import { setLearnings } from '../actions/learnings';
+
 
 const App = () => {
 
   const [ projects, projectsDispatch ] = useReducer(projectsReducer, []);
   const [ articles, articlesDispatch] = useReducer(articlesReducer, []);
+  const [ learnings, learningsDispatch ] = useReducer(learningsReducer, []);
   const [ pageLoading, setPageLoading ] = useState(true);
 
   useEffect(() => {
@@ -32,12 +37,23 @@ const App = () => {
     setArticles()
       .then((articlesFromDBActionGenerator) => {
         articlesDispatch(articlesFromDBActionGenerator);
+      })
+      .catch((e) => {
+        console.log('The Occurence of an error has unexpectedly occurred :( ', e.message);
+      })
+  }, [])
+
+  useEffect(() => {
+    setLearnings()
+      .then((learningsFromDBActionGenerator) => {
+        learningsDispatch(learningsFromDBActionGenerator);
         setPageLoading(false)
       })
       .catch((e) => {
         console.log('The Occurence of an error has unexpectedly occurred :( ', e.message);
       })
   }, [])
+
 
   return (
 
@@ -49,7 +65,9 @@ const App = () => {
 
       <ProjectsContext.Provider value={{projects}}>
       <ArticlesContext.Provider value={{articles}}>
+      <LearningsContext.Provider value={{learnings}}>
         <AppRouter />
+      </LearningsContext.Provider>
       </ArticlesContext.Provider>      
       </ProjectsContext.Provider>
         

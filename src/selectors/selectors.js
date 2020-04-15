@@ -49,15 +49,16 @@ export const getVisibleItems = (listType, list,  { show = 'all',  sortBy = null,
 
     }
 
-
-    const articles = (article) => {
+    console.log(listType, list, show, sortBy)
+    // Default,  this covers both articles and learnings as their flters and sorting options are the same.
+    const items = (item) => {
       let startDateOk = true;
       let endDateOk = true;
-      let showMatch = show.toLowerCase() === 'all' ? true : article.tags.map((tag) => {
+      let showMatch = show.toLowerCase() === 'all' ? true : item.tags.map((tag) => {
         return tag.toLowerCase();
       }).includes(show.toLowerCase())
-      startDateOk = !!startOfRangeDate &&  startOfRangeDate.isSameOrBefore(article.createdAt);
-      endDateOk = !!endOfRangeDate && endOfRangeDate.isSameOrAfter(article.createdAt);
+      startDateOk = !!startOfRangeDate &&  startOfRangeDate.isSameOrBefore(item.createdAt);
+      endDateOk = !!endOfRangeDate && endOfRangeDate.isSameOrAfter(item.createdAt);
 
       return startDateOk && endDateOk && showMatch;
   
@@ -81,8 +82,8 @@ export const getVisibleItems = (listType, list,  { show = 'all',  sortBy = null,
         }
       }
     })
-  }else if(listType === 'articles') {
-    return list.filter(articles) // run the articles function one time per each list item
+  }else if(listType === 'articles' || listType === 'learnings') {
+    return list.filter(items) // run the items function one time per each list item
       .sort((a, b) => {
         if(sortBy === 'desc') {
           return a.createdAt < b.createdAt ? 1 : -1;

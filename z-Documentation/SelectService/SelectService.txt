@@ -1,0 +1,78 @@
+The SelectService is a simple way to implement select dropdowns in your ReactJS applications.
+
+To use them,  create a component as below:
+
+import React, { useState } from 'react'
+
+const SelectService = ({addClass, options, onChange, value}) => {
+
+  return (
+    <>      
+      <select 
+        className={addClass} 
+        onChange={onChange}
+        value={value}
+        >
+        {options.map((option) => {
+          return <option key={option.optionValue} value={option.optionValue}>{option.textContent}</option>
+        })}
+      </select>
+    </>
+  )
+}
+
+export default SelectService
+
+
+Then in the parent component where you want to implement the dropdown: 
+
+Firstly import the above component,  
+
+eg: 
+import SelectService from '../services/SelectService/SelectService';  
+
+  Create an array of options which will be passed in to SelectService
+  It holds the options fields value and textContent values.
+
+  for Example in the below: 
+  const projectFilterOptions = [{
+    optionValue: 'completed',
+    textContent: 'Completed',
+  },{
+    optionValue: 'incomplete',
+    textContent: 'Incomplete'
+  },{
+    optionValue: 'all',
+    textContent: 'All'
+  }]
+
+  A Function is defined in the parent component, this function will be passed down to the instance of SelectService. It controls what should happen when the user changes one of the dropdowns.  The implementation of this is entirely down to the users use case. 
+
+  in the below example,  the purpose of the selectService instance is to allow a user to change how their list of data is filtered: 
+
+    const onSortChange = (e) => {    
+      setFilters({
+        ...filters,
+        sortBy: e.target.value
+      })
+    }
+
+    So when the user interacts with and changes one of the select dropdown options,  that option change triggers the above function call, which in this use case, updates the components state to reflect the new selected option..
+
+
+  In the jsx of the parent element, bring in an instance of SelectService,  example below:
+
+        <SelectService 
+          addClass='select-css' 
+          options={projectFilterOptions} 
+          onChange={onCompleteStatusChange} 
+          value={filters.show}
+        />
+
+The service takes 4 props: 
+addClass,  a className to be given for styling,  target this in your css file to apply styles.
+options: #This is the list you created in your parent component
+onChange:  A function defined in hte parent and passed through as props to the child, 
+value:  The default value for the list of options, that is,  the option that should be displayed on page load.
+
+  
