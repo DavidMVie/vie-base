@@ -21,7 +21,7 @@ const ArticlePage = (props) => {
   return (
     <ArticlePortal>
       <section className="sect article-banner">
-        <GridService list={[article]} imgOverlay={true} serviceType="articlePostBanner" staticOverlay={true} />
+        <GridService addClassName="article" list={[article]} imgOverlay={true} serviceType="articlePostBanner" staticOverlay={true} />
       </section>
       <section className="sect article-page">
         {article.article}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import GridImgOverlay from './GridImgOverlay';
 
 
-const GridService = ({list=[], imgOverlay=false, serviceType=null, staticOverlay=false, getArticlesByTag}) => {
+const GridService = ({list=[], addClassName, imgOverlay=false, serviceType=null, staticOverlay=false, getArticlesByTag}) => {
 
   // This function offers mobile users a way to click the Info font awesome icon and have the overlay appear,  since they don't have the hover facility.
   const mobileShowOverlay = (e) => {
@@ -15,9 +15,13 @@ const GridService = ({list=[], imgOverlay=false, serviceType=null, staticOverlay
     }       
   }
 
+  // addClassNameFunc = () => {
+  //   return addClass ? `grid-service ${addClassName}` : 'grid-service'  
+  // }
+
   return (
     <>
-    <ul className="grid-service" >
+    <ul className={addClassName ? `grid-service ${addClassName}` : 'grid-service' }>
     {list.map((item) => {
       return (
         <li key={item.id}>
