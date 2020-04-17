@@ -149,25 +149,21 @@ const ArticlesPage = () => {
   return (
     <>
     <section className="sect articles-page">
-    <h1>All Articles</h1>
-    <p>Some of my latest, usually troubled musings :)</p>
+    <h1>Articles</h1>
       <div className="select-filters articles-filters">
-        Showing 
         <SelectService 
           addClass="select-css" 
           options={articlesFilterOptions} 
           onChange={onFilterChange}
           value={filters.show}
         />
-        related entries with the 
         <SelectService 
           addClass="select-css"
           options={articlesSortOptions}
           onChange={onSortChange}
         />
-      </div>
-      that were created between 
-      <DateRangePicker
+      <span className="created-between">created between </span>
+       <DateRangePicker
         startDate={filters.startOfRangeDate} // momentPropTypes.momentObj or null,
         startDateId="startDateRange" // PropTypes.string.isRequired,
         endDate={filters.endOfRangeDate} // momentPropTypes.momentObj or null,`
@@ -179,6 +175,7 @@ const ArticlesPage = () => {
         isOutsideRange={falseFunc}
         showClearDates={false}
       />
+      </div>
     </section>
     {console.log(filteredArticles)}
     <section className="sect articles-page">

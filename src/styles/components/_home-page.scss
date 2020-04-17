@@ -22,7 +22,8 @@ section h1 i {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: $l-size
+  margin-top: $l-size;
+
 }
 
 .sect .featured-item-wrapper .img-featured-item-wrapper {
@@ -35,3 +36,23 @@ section h1 i {
   height: 100%
 }
 
+.center-wrapper {
+  margin-top: 20px;
+}
+
+/* MEDIUM DEVICE WIDTHS (900PX) */
+
+
+@media screen and (min-width: 900px) {
+  .sect .featured-item-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .sect .home-page-feature-details {
+ 
+    margin-left: 50px
+  }
+
+  
+}

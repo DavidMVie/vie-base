@@ -31,20 +31,16 @@ const App = () => {
       .catch((e) => {
         console.log('The Occurence of an error has unexpectedly occurred :( ', e.message);
       })
-  }, [])
 
-  useEffect(() => {
-    setArticles()
+      setArticles()
       .then((articlesFromDBActionGenerator) => {
         articlesDispatch(articlesFromDBActionGenerator);
       })
       .catch((e) => {
         console.log('The Occurence of an error has unexpectedly occurred :( ', e.message);
       })
-  }, [])
 
-  useEffect(() => {
-    setLearnings()
+      setLearnings()
       .then((learningsFromDBActionGenerator) => {
         learningsDispatch(learningsFromDBActionGenerator);
         setPageLoading(false)
@@ -54,6 +50,7 @@ const App = () => {
       })
   }, [])
 
+ 
 
   return (
 

@@ -48,8 +48,8 @@ const ProjectPage = (props) => {
         <p>{project.longDescription}</p>
       </section>
     </div>
-    <section className="sect project-page">
-      <div className="build-tools-wrapper">
+    <div className="flex-sections-wrapper">
+      <section className="sect project-page build-tools-wrapper">
         <h2 className="contains-icon">Build Tools <i className="fas fa-toolbox"></i></h2>
         <hr className="sect-line" />
         <ul className="fa-ul listTools">
@@ -57,20 +57,19 @@ const ProjectPage = (props) => {
             return <li key={tool}><span className="fa-li"><i className="fas fa-check-square"></i></span>{tool}</li>
           })}
         </ul>
-      </div>
-      <div className="build-features-wrapper">
-        <h2 className="contains-icon">Site Features 
-          <i className="fas fa-box-open"></i>
-        </h2>
-        <hr className="sect-line" />
-        <ul className="fa-ul listFeatures">
-          {project.features.map((feature) => {
-            return <li key={feature}><span className="fa-li"><i className="fas fa-check-square"></i></span>{feature}</li>
-          })}
-        </ul>       
-      </div>
-    </section>
-
+        </section>
+        <section className="sect project-page build-features-wrapper">
+          <h2 className="contains-icon">Site Features 
+            <i className="fas fa-box-open"></i>
+          </h2>
+          <hr className="sect-line" />
+          <ul className="fa-ul listFeatures">
+            {project.features.map((feature) => {
+              return <li key={feature}><span className="fa-li"><i className="fas fa-check-square"></i></span>{feature}</li>
+            })}
+          </ul>
+      </section>
+    </div>
     </>
   )
 }

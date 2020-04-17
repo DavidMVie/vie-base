@@ -36,7 +36,7 @@ header nav {
   display: none;
 }
 
-@media (min-width: $desktop-breakpoint) {
+@media (min-width: $m-breakpoint) {
   /* The main page nav menu for larger devices */
   i.fas.fa-bars {
     display: none

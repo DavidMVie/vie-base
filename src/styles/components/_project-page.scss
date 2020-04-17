@@ -1,3 +1,12 @@
+.flex-sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 930px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
 .sect.project-page h1 {
   margin-bottom: 20px;
 }
@@ -5,12 +14,25 @@
 .sect.project-page img {
   max-width: 100%;
   height: auto;
+  @media screen and (min-width: 750px) {
+    width: 620px;    
+  }
+  @media screen and (min-width: 930px) {
+    width: 100%;
+  }
 }
 
 .project-code-links-wrapper {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+.sect.project-page.build-tools-wrapper,
+.sect.project-page.build-features-wrapper {
+  @media screen and (min-width: 930px) {
+    width: 44vw;
+  }
 }
 
 .fas.fa-check-square {

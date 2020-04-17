@@ -68,7 +68,10 @@ const HomePage = () => {
 
       <GridService list={latestProjects} imgOverlay={true} serviceType={"projects"} staticOverlay={false}/>
 
-      <Link to="/projects" className="button button--btn1">See All Projects</Link>
+      <div className="center-wrapper"> 
+        <Link to="/projects" className="button button--btn1">See All Projects</Link>
+      </div>
+
     </section>
 
 
@@ -84,6 +87,11 @@ const HomePage = () => {
       <h1 className="section-title contains-icon">Articles <i className="far fa-newspaper"></i></h1>
 
       <GridService list={latestArticles} imgOverlay={true} serviceType={"articlesThumb"} staticOverlay={true}/>
+
+      <div className="center-wrapper">
+        <Link to="/articles" className="button button--btn1">See All Articles</Link>
+      </div>
+
     </section>
 
 
@@ -102,7 +110,7 @@ const HomePage = () => {
             })}
           </p>
           <div className="center-wrapper">
-            <Link to={`/projects/${featuredLearning.id}`} className="button button--btn1">More Info</Link>
+            <Link to={`/learnings/${featuredLearning.id}`} className="button button--btn1">More Info</Link>
           </div>          
         </div>  
       </div>
@@ -114,7 +122,10 @@ const HomePage = () => {
 
       <GridService list={latestLearnings} imgOverlay={true} serviceType={"learnings"} staticOverlay={false}/>
 
-      <Link to="/learnings" className="button button--btn1">See All Courses / Tutorials</Link>
+      <div className="center-wrapper">
+        <Link to="/learnings" className="button button--btn1">See All Courses / Tutorials</Link>
+      </div>
+
     </section>
 
    </>

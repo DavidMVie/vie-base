@@ -22,7 +22,7 @@ const ProjectsPage = () => {
 
   const [ paginationSettings, setPaginationSettings ] = useState({
     onPage: 1,
-    itemsPerPage: 2
+    itemsPerPage: 6
   });
 
   const [ filters, setFilters ] = useState({
@@ -117,17 +117,23 @@ const ProjectsPage = () => {
 
   return (
     <section className="sect projects-page">
-    <h1>All Projects</h1>
-    <p>Listed projects that I've been working on:</p>
+    <h1>Projects</h1>
+
     <div className="select-filters projects-filters">
-      Showing 
+
       <SelectService 
         addClass='select-css' 
         options={projectFilterOptions} 
         onChange={onCompleteStatusChange} 
         value={filters.show}
-        />
-      projects from between 
+      />
+      <SelectService
+        addClass="select-css" 
+        options={projectSortOptions} 
+        onChange={onSortChange}
+        value={filters.sortBy}
+      />
+      ranging from:
       <DateRangePicker
         startDate={filters.startOfRangeDate} // momentPropTypes.momentObj or null,
         startDateId="startOfRangeDate" // PropTypes.string.isRequired,
@@ -139,13 +145,6 @@ const ProjectsPage = () => {
         numberOfMonths={1}
         isOutsideRange={falseFunc}
         showClearDates={false}
-      />
-      sorted by: 
-      <SelectService
-        addClass="select-css" 
-        options={projectSortOptions} 
-        onChange={onSortChange}
-        value={filters.sortBy}
       />
     </div>
 

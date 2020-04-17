@@ -41,10 +41,14 @@ h4 {
 }
 
 
-p, li, a, span, div, input, textarea {
+p,  a, span, div, input, textarea {
   font-size: $ml-size;
   color: $light-grey;
   line-height: 1.2;
+}
+
+li {
+  color: $off-black;
 }
 
 header h1 {

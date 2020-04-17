@@ -47,8 +47,8 @@ module.exports = (env) => {
         }
       ]
     },
-    mode: 'production',
-    // devtool: isProduction ? 'source-map' : 'inline-source-map',
+    mode: 'development',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devtool: false,
     devServer: {
       contentBase: path.join(__dirname, 'public'),
