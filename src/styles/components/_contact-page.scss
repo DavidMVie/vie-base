@@ -4,6 +4,15 @@
 .sect.contact-page form div.contact-name {
   margin-top: 10px;
 }
+
+// A wrapper that constrins the width on larger displays
+.inner-contact-wrapper {
+  @media screen and (min-width: 700px) {
+    width: 615px;
+    margin: 0 auto;
+  }
+}
+
 .sect.contact-page form div.contact-email,
 .sect.contact-page form div.contact-last-name,
 .sect.contact-page form div.contact-message,

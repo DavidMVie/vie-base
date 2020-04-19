@@ -160,7 +160,7 @@ const LearningsPage = () => {
           onChange={onSortChange}
         />
       </div>
-      that were created between 
+      <span className="ranging-from">that were created between </span>
       <DateRangePicker
         startDate={filters.startOfRangeDate} // momentPropTypes.momentObj or null,
         startDateId="startDateRange" // PropTypes.string.isRequired,
@@ -185,7 +185,7 @@ const LearningsPage = () => {
       <GridService 
         list={paginatedItems} 
         imgOverlay={true} 
-        serviceType={"learnings"}  
+        serviceType={"learningsThumb"}  
         staticOverlay={false}
         getLearningsByTag={getLearningsByTag}
       />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const LoadingPage = () => {
 
-  const [ text ] = useState(['Loading Flux Capacitor!', 'Generating critical Thingmybobs!', 'Incoming things from the interweb!', 'Hold on, right there!', 'We\'re on it!', 'Warming up Rockets', 'Sniffing data packets!', 'Earnestly Discombulating!', 'Not all who wander are lost!', 'scanning all doofers!', 'A few bytes to eat, be right there!', 'compiling etch-a-sketch model!'])
+  const [ text ] = useState(['Loading Flux Capacitor!', 'Generating critical Thingmybobs!', 'Incoming things from the interweb!', 'Hold on, right there!', 'We\'re on it!', 'Warming up Rockets', 'Sniffing data packets!', 'Earnestly Discombulating!', 'scanning all doofers!', 'A few bytes to eat, be right there!', 'compiling wire frame from etch-a-sketch !'])
   
   const [ selectedText, setSelectedText ] = useState(text[Math.floor(Math.random() * text.length)])
 
@@ -14,7 +14,7 @@ const LoadingPage = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       randomText();
-    }, 650);
+    }, 850);
   
     // returned function will be called on component unmount 
     return () => {

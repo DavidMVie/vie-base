@@ -6,6 +6,7 @@ import { createBrowserHistory } from "history"
 import ArticlePage from '../components/ArticlePage';
 import ArticlesPage from '../components/ArticlesPage';
 import ContactPage from '../components/ContactPage';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import HeaderBar from '../components/HeaderBar';
 import HomePage from '../components/HomePage';
@@ -28,7 +29,7 @@ const AppRouter = () => {
       <PageContent>
         <Switch>
           <Route path="/" component={HomePage} exact={true}/>
-          <Route path="/projects/:id" component={ProjectPage}/>
+          <Route path="/projects/:id" component={ProjectPage} exact={true}/>
           <Route path="/projects" component={ProjectsPage}/>
           <Route path="/articles/:id" component={ArticlePage}/>
           <Route path="/articles" component={ArticlesPage} />
@@ -38,6 +39,7 @@ const AppRouter = () => {
           <Route component={PageNotFound} />
         </Switch>
       </PageContent>
+      <Footer />
     </Router>
   )
 

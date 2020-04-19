@@ -116,51 +116,56 @@ const ProjectsPage = () => {
   }, [filteredItems, paginationSettings])
 
   return (
+    <>
     <section className="sect projects-page">
-    <h1>Projects</h1>
+      <h1>Projects</h1>
 
-    <div className="select-filters projects-filters">
+      <div className="select-filters projects-filters">
 
-      <SelectService 
-        addClass='select-css' 
-        options={projectFilterOptions} 
-        onChange={onCompleteStatusChange} 
-        value={filters.show}
+        <SelectService 
+          addClass='select-css' 
+          options={projectFilterOptions} 
+          onChange={onCompleteStatusChange} 
+          value={filters.show}
+        />
+        <SelectService
+          addClass="select-css" 
+          options={projectSortOptions} 
+          onChange={onSortChange}
+          value={filters.sortBy}
+        />
+        <span className="ranging-from"> ranging from: </span> 
+        <DateRangePicker
+          startDate={filters.startOfRangeDate} // momentPropTypes.momentObj or null,
+          startDateId="startOfRangeDate" // PropTypes.string.isRequired,
+          endDate={filters.endOfRangeDate} // momentPropTypes.momentObj or null,
+          endDateId="endOfRangeDate" // PropTypes.string.isRequired,
+          onDatesChange={onDatesChange}
+          focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+          onFocusChange={onFocusChange} // PropTypes.func.isRequired,
+          numberOfMonths={1}
+          isOutsideRange={falseFunc}
+          showClearDates={false}
+        />
+      </div>
+    </section>
+
+    <section className="sect projects-page">
+
+      <PaginationService 
+        listLength={filteredItems.length}
+        onPageClicked={onPageClicked} 
+        paginationSettings={paginationSettings}
       />
-      <SelectService
-        addClass="select-css" 
-        options={projectSortOptions} 
-        onChange={onSortChange}
-        value={filters.sortBy}
-      />
-      ranging from:
-      <DateRangePicker
-        startDate={filters.startOfRangeDate} // momentPropTypes.momentObj or null,
-        startDateId="startOfRangeDate" // PropTypes.string.isRequired,
-        endDate={filters.endOfRangeDate} // momentPropTypes.momentObj or null,
-        endDateId="endOfRangeDate" // PropTypes.string.isRequired,
-        onDatesChange={onDatesChange}
-        focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-        onFocusChange={onFocusChange} // PropTypes.func.isRequired,
-        numberOfMonths={1}
-        isOutsideRange={falseFunc}
-        showClearDates={false}
-      />
-    </div>
 
-    <PaginationService 
-      listLength={filteredItems.length}
-      onPageClicked={onPageClicked} 
-      paginationSettings={paginationSettings}
-    />
-
-    <GridService 
-      list={paginatedItems} 
-      imgOverlay={true} 
-      serviceType={"projects"} 
-      staticOverlay={false}
-    />
-  </section>
+      <GridService 
+        list={paginatedItems} 
+        imgOverlay={true} 
+        serviceType={"projectsThumb"} 
+        staticOverlay={false}
+      />
+    </section>
+    </>
   )
 }
 

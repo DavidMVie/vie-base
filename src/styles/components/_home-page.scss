@@ -18,39 +18,31 @@ section h1 i {
   text-align: center;
   padding: $l-size
 }
-.sect .featured-item-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-top: $l-size;
 
-}
-
-.sect .featured-item-wrapper .img-featured-item-wrapper {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.sect .featured-item-wrapper img {
+.flex-split img {
   width: 100%;
-  height: 100%
 }
 
 .center-wrapper {
   margin-top: 20px;
 }
 
+ul.grid-service.articles-thumb-featured {
+  margin-bottom: 20px;
+  display: block;
+}
+
+ul.grid-service.articles-thumb-featured > li {
+  @media screen and (min-width: 930px) {
+    min-width: 650px !important;
+  }
+}
+
+
 /* MEDIUM DEVICE WIDTHS (900PX) */
 
-
 @media screen and (min-width: 900px) {
-  .sect .featured-item-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .sect .home-page-feature-details {
- 
+  .sect .home-page-feature-details { 
     margin-left: 50px
   }
 

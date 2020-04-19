@@ -15,10 +15,6 @@ const GridService = ({list=[], addClassName, imgOverlay=false, serviceType=null,
     }       
   }
 
-  // addClassNameFunc = () => {
-  //   return addClass ? `grid-service ${addClassName}` : 'grid-service'  
-  // }
-
   return (
     <>
     <ul className={addClassName ? `grid-service ${addClassName}` : 'grid-service' }>

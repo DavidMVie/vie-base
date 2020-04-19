@@ -5,8 +5,8 @@ const ProjectsOverlay = ({item}) => {
 
   return (
     <>
-      <h2>{item.name}</h2>
-      <hr />
+      <h2>{item.name} <hr className="hr-underline" /></h2>
+      
       <p>{item.shortDescription}</p>
       <p>Built With: {item.tools.map((tool) => {
         return (` ${tool}, `)

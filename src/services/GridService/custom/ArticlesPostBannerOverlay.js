@@ -7,7 +7,7 @@ const ArticlesPostBannerOverlay = ({item}) => {
     <>
       
       <h1>{item.title} </h1>    
-      <p>Posted: {moment(item.createdAt).format("MMM, Do, YYYY")}</p>      
+      <p className="articles-banner-posted-date">Posted: {moment(item.createdAt).format("MMM, Do, YYYY")}</p>      
     </>    
 
   )

@@ -44,11 +44,11 @@ const HomePage = () => {
     <section className="sect home-page-feature-project">
       <h1 className="contains-icon">{featuredProject.name}<img src="https://dmvie1.s3.us-east-2.amazonaws.com/crane.png" alt="Crane Image"></img></h1>
       <p>{featuredProject.featuredSpiel}</p>
-      <div className="featured-item-wrapper">
-        <div className="img-featured-item-wrapper">
+      <div className="flex-split">
+        <div className="flex-split__left-side constrain">
           <img className="img-featured-item" src={featuredProject.thumbPic}/>        
         </div>
-        <div className="home-page-feature-details">
+        <div className="flex-split__right-side">
           <p>{featuredProject.shortDescription}</p>
           <p>Built With:
             {featuredProject.tools.map((tool) => {
@@ -66,7 +66,7 @@ const HomePage = () => {
       <h1 className="section-title contains-icon"> Other Works: <i className="fas fa-project-diagram"></i></h1>
       <p>Or have a look through some of my other work,  in various states of completion!</p>
 
-      <GridService list={latestProjects} imgOverlay={true} serviceType={"projects"} staticOverlay={false}/>
+      <GridService list={latestProjects} imgOverlay={true} serviceType={"projectsThumb"} staticOverlay={false}/>
 
       <div className="center-wrapper"> 
         <Link to="/projects" className="button button--btn1">See All Projects</Link>
@@ -79,7 +79,7 @@ const HomePage = () => {
       <h1 className="contains-icon">{featuredArticle.title}<img src="https://dmvie1.s3.us-east-2.amazonaws.com/crane.png" alt="Crane Image"></img></h1>
       <p>{featuredArticle.shortDescription}</p>
       {/* list needs an array, so create an array literal and into it add the featured article object so there's now a list with 1 item.. */}
-      <GridService list={[featuredArticle]} imgOverlay={true} serviceType="articlesThumb" staticOverlay={true} />
+      <GridService list={[featuredArticle]} imgOverlay={true} serviceType="articlesThumb" staticOverlay={true} addClassName="articles-thumb-featured" />
     </section>
 
     <section className="sect home-page-articles">
@@ -98,11 +98,11 @@ const HomePage = () => {
     <section className="sect home-page-feature-project">
       <h1 className="contains-icon">{featuredLearning.name}<img src="https://dmvie1.s3.us-east-2.amazonaws.com/crane.png" alt="Crane Image"></img></h1>
       <p>{featuredLearning.featuredSpiel}</p>
-      <div className="featured-item-wrapper">
-        <div className="img-featured-item-wrapper">
+      <div className="flex-split">
+        <div className="flex-split__left-side">
           <img className="img-featured-item" src={featuredLearning.thumbPic}/>        
         </div>
-        <div className="home-page-feature-details">
+        <div className="flex-split__right-side">
           <p>{featuredLearning.shortDescription}</p>
           <p>Built With:
             {featuredLearning.tools.map((tool) => {
@@ -120,7 +120,7 @@ const HomePage = () => {
       <h1 className="section-title contains-icon"> Other Works: <i className="fas fa-project-diagram"></i></h1>
       <p>Here's some of the courses, tutorials from others that I've been taking some time to grapple with!</p>
 
-      <GridService list={latestLearnings} imgOverlay={true} serviceType={"learnings"} staticOverlay={false}/>
+      <GridService list={latestLearnings} imgOverlay={true} serviceType={"learningsThumb"} staticOverlay={false}/>
 
       <div className="center-wrapper">
         <Link to="/learnings" className="button button--btn1">See All Courses / Tutorials</Link>

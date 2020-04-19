@@ -17,14 +17,12 @@ const ArticlesThumbOverlay = ({item, getArticlesByTag}) => {
   return (
     <>
       <p className="articles-thumb-date">Posted:{getDate(item.createdAt)}</p>
-      <div className="thumb-center">
-        <h1>{item.title} <hr /></h1>
-        <div>
-          <Link to={`/articles/${item.id}`}>
-            Read Article
-          </Link>
-        </div>
-      </div>              
+      <h2>{item.title} <hr className="hr-underline hr-underline--gradient" /></h2>
+      <div> 
+        <Link to={`/articles/${item.id}`}>
+          Read Article
+        </Link>
+      </div>           
       <ul className="articles-thumb-tags"> 
         {item.tags.map((tag) => {
           return <li key={tag} onClick={onClick}><i className="fas fa-tags"></i>{tag}</li>

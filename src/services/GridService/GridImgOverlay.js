@@ -19,15 +19,15 @@ const GridImgOverlay = ({item, serviceType, staticOverlay, getArticlesByTag}) =>
   }
 
   const redir = () => {
-    serviceType === 'projects' ? history.push(`/projects/${item.id}`) : history.push(`/learnings/${item.id}`)
+    serviceType === 'projectsThumb' ? history.push(`/projects/${item.id}`) : history.push(`/learnings/${item.id}`)
     
   }
 
   const getServiceType = () => {
     switch (serviceType) {
-      case 'projects': 
+      case 'projectsThumb': 
         return <ProjectsOverlay item={item}/>
-      case 'learnings': 
+      case 'learningsThumb': 
         return <ProjectsOverlay item={item} urlPath='learnings'/> // learning uses the projects overlay as it's identical except for where you should go when you click on the item <ProjectOverlay/> lnks to projects/:id by default,  this tells it in learnings cases to link to the learnings route instead //
       case 'articlesThumb': 
         return <ArticlesThumbOverlay item={item} getArticlesByTag={getArticlesByTag}/>
@@ -43,9 +43,7 @@ const GridImgOverlay = ({item, serviceType, staticOverlay, getArticlesByTag}) =>
         onMouseLeave={!staticOverlay ? onMouseLeave : undefined} 
         onMouseEnter={!staticOverlay ? onMouseEnter : undefined} 
         onClick={!staticOverlay ? redir : undefined}>
-        <div className="off-edges">
-          {getServiceType()}
-        </div>      
+          {getServiceType()}    
       </div>
   )
 }

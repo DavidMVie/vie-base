@@ -1,39 +1,17 @@
-.flex-sections-wrapper {
-  display: flex;
-  flex-direction: column;
-  @media screen and (min-width: 930px) {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-}
 
 .sect.project-page h1 {
-  margin-bottom: 20px;
-}
-
-.sect.project-page img {
-  max-width: 100%;
-  height: auto;
-  @media screen and (min-width: 750px) {
-    width: 620px;    
-  }
-  @media screen and (min-width: 930px) {
-    width: 100%;
-  }
+  margin-bottom: 40px;
 }
 
 .project-code-links-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-}
-
-.sect.project-page.build-tools-wrapper,
-.sect.project-page.build-features-wrapper {
-  @media screen and (min-width: 930px) {
-    width: 44vw;
+  margin: 20px 0;
+  @media screen and (min-width: 600px) {
+    max-width: 500px;
   }
 }
+
 
 .fas.fa-check-square {
   color: rgb(109, 199, 109)
@@ -44,14 +22,7 @@
   text-align: left;
 }
 
-hr.sect-line {
-  height: .5px;
-  border: none;
-  background: rgb(199, 199, 199);
-  width: 50%;
-  margin: 15px auto 0;
-   
- }
+
 
  /* DEFAULT H2 TAG ICONS */
 .project-page h2 i.fas,

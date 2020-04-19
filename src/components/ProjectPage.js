@@ -13,63 +13,65 @@ const ProjectPage = (props) => {
 
   const getLiveSiteLink = () => {
     if(project.liveSiteLink) {
-      return (
-        <span id="liveSiteLink">               
-          <Link to={project.liveSiteLink} className="button button-btn1">View Live Site</Link>
-        </span>
+      return (            
+        <Link to={project.liveSiteLink} className="button button-btn1">View Live Site</Link>
       )
     } else {
       return (
-        <span id="liveSiteLink">
-          <span className="button button--disabled" title="I'm working on it!">View Live Site</span>
-        </span>
+        <span className="button button--disabled" title="I'm working on it!">View Live Site</span>  
       )
     }
   }
 
   return (
     <>
-    <div className="flex-sections-wrapper">
       <section className="sect project-page">
         <h1>{project.name}</h1>
-        <img src={project.thumbPic} alt={project.name}/>
-        <div className="project-code-links-wrapper">
-          <span className="git-hub-link">
-            <a className="button button--btn1">
-              Github Repo
-            </a>
-          </span>
-          {getLiveSiteLink()}
+        <div className="flex-split">
+          <div className="flex-split__left-side constrain">
+            <img src={project.thumbPic} alt={project.name}/>
+            <div className="project-code-links-wrapper">              
+              <Link to={project.githubLink} className="button button--btn1">
+                View Live Site
+              </Link>
+              {getLiveSiteLink()}    
+            </div>
+          </div>
+          <div className="flex-split__right-side">
+            <h2>About this project:</h2>
+            <hr className="sect-line" />
+            <p>{project.longDescription}</p>
+          </div>        
         </div>
       </section>
-      <section className="sect project-page">
-        <h2>About this project:</h2>
-        <hr className="sect-line" />
-        <p>{project.longDescription}</p>
-      </section>
-    </div>
-    <div className="flex-sections-wrapper">
-      <section className="sect project-page build-tools-wrapper">
-        <h2 className="contains-icon">Build Tools <i className="fas fa-toolbox"></i></h2>
-        <hr className="sect-line" />
-        <ul className="fa-ul listTools">
-          {project.tools.map((tool) => {
-            return <li key={tool}><span className="fa-li"><i className="fas fa-check-square"></i></span>{tool}</li>
-          })}
-        </ul>
-        </section>
-        <section className="sect project-page build-features-wrapper">
-          <h2 className="contains-icon">Site Features 
-            <i className="fas fa-box-open"></i>
-          </h2>
-          <hr className="sect-line" />
-          <ul className="fa-ul listFeatures">
-            {project.features.map((feature) => {
-              return <li key={feature}><span className="fa-li"><i className="fas fa-check-square"></i></span>{feature}</li>
-            })}
-          </ul>
-      </section>
-    </div>
+
+      <div className="flex-split">
+        <div className="flex-split__left-side">
+          <section className="sect sect--no-margin-top project-page ">
+            <h2 className="contains-icon contains-icon--no-margin">Build Tools <i className="fas fa-toolbox"></i></h2>
+            <hr className="sect-line" />
+            <ul className="fa-ul listTools">
+              {project.tools.map((tool) => {
+                return <li key={tool}><span className="fa-li"><i className="fas fa-check-square"></i></span>{tool}</li>
+              })}
+            </ul>
+          </section>
+        </div>
+        <div className="flex-split__right-side">
+          <section className="sect sect--no-margin-top project-page ">               
+            <h2 className="contains-icon contains-icon--no-margin">Site Features 
+              <i className="fas fa-box-open"></i>
+            </h2>
+            <hr className="sect-line" />
+            <ul className="fa-ul listFeatures">
+              {project.features.map((feature) => {
+                return <li key={feature}><span className="fa-li"><i className="fas fa-check-square"></i></span>{feature}</li>
+              })}
+            </ul>
+          </section>
+        </div>
+      </div>
+
     </>
   )
 }
