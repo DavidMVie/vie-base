@@ -30,6 +30,7 @@ h1 {
 
 h2 {
   font-size: 2.5rem;
+  color: lighten($off-black, 15%);
 }
 
 h3 {
@@ -52,8 +53,6 @@ p,  a, span, div, input, textarea {
 
 @media screen and (min-width: 930px) {
   h1 { font-size: $xxl-size}
-  h2 { font-size: $xl-size}
-
 }
 
 li {
@@ -242,4 +241,13 @@ hr.sect-line {
 }
 
   
- 
+/* DEFAULT H2 TAG WITH FONT ICONS INSIDE */
+h2 i.fas,
+h2 h1 i.fas {
+  color: rgba(151, 16, 16, 0.07);
+  margin-left: 15px;
+  font-size: 4em;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+}

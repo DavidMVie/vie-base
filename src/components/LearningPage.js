@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import LearningsContext  from '../context/LearningsContext';
+import LearningsContext from '../context/LearningsContext';
 
 const LearningPage = (props) => {
-
   const { learnings } = useContext(LearningsContext);
 
   const learning = learnings.find((learningsElement) => {
     return learningsElement.id === props.match.params.id;
   })
+
 
   const getLiveSiteLink = () => {
     if(learning.liveSiteLink) {
@@ -29,12 +29,11 @@ const LearningPage = (props) => {
 
   return (
     <>
-    <div className="flex-split">
-      <div className="flex-split__left-side constrain">
-        <section className="sect sect--no-margin-top project-page">
-          <h1>{learning.name}</h1>
-          <img src={learning.thumbPic} alt={learning.name}/>
-          <div className="project-code-links-wrapper">
+      <div className="row row1">
+        <div className="col col1">
+          <h1>{learning.name} </h1>
+          <img src={learning.thumbPic} alt={learning.name} />
+          <div className="btn-links-wrapper">
             <span className="git-hub-link">
               <a className="button button--btn1">
                 Github Repo
@@ -42,20 +41,15 @@ const LearningPage = (props) => {
             </span>
             {getLiveSiteLink()}
           </div>
-        </section>
-      </div>
-      <div className="flex-split__right-side">
-        <section className="sect sect--no-margin-top project-page">
+        </div>
+        <div className="col col2">
           <h2>About this Course / Tutorial:</h2>
           <hr className="sect-line" />
           <p>{learning.longDescription}</p>
-        </section>
+        </div>
       </div>
-    </div>
-
-    <div className="flex-split">
-      <div className="flex-split__left-side">
-        <section className="sect sect--no-margin-top project-page "> 
+      <div className="row row2">
+        <div className="col col1">
           <h2 className="contains-icon contains-icon--no-margin">Build Tools <i className="fas fa-toolbox"></i></h2>
           <hr className="sect-line" />
           <ul className="fa-ul listTools">
@@ -63,10 +57,8 @@ const LearningPage = (props) => {
               return <li key={tool}><span className="fa-li"><i className="fas fa-check-square"></i></span>{tool}</li>
             })}
           </ul>
-        </section>
-      </div>
-      <div className="flex-split__right-side">
-        <section className="sect sect--no-margin-top project-page">  
+        </div>
+        <div className="col col2">
           <h2 className="contains-icon contains-icon--no-margin">Site Features 
             <i className="fas fa-box-open"></i>
           </h2>
@@ -75,12 +67,12 @@ const LearningPage = (props) => {
             {learning.features.map((feature) => {
               return <li key={feature}><span className="fa-li"><i className="fas fa-check-square"></i></span>{feature}</li>
             })}
-          </ul>       
-      </section>
+          </ul>   
+        </div>
       </div>
-    </div>
     </>
   )
+
 }
 
-export default LearningPage
+export default LearningPage;
